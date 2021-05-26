@@ -1,0 +1,63 @@
+page-new-card {
+  background: #fff !important;
+
+  .text-header {
+    margin: 40px 0 50px 0;
+  }
+
+  .button-div {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+  .errors{
+    text-align: center;
+    color: red;
+  }
+  .button {
+    background: #72a9ae;
+    border-radius: 20px;
+    padding: 8px;
+    width: 100%;
+    margin: 0 auto;
+    color: #fff;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    text-align: center;
+    font-weight: 600;
+  }
+  .img-card {
+    width: 100%;
+    text-align: center;
+  }
+
+  form {
+    vertical-align: middle;
+    width: 100%;
+    margin: 0 auto;
+    .form-group {
+      width: 100%;
+      padding: 10px;
+      display: flex;
+    }
+
+    .form-group label {
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 600;
+    }
+
+    .form-group input {
+      width: 100%;
+      font-size: 18px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 20px;
+      color: #ddd;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<ion-tabs class="tabs-islogged" *ngIf="values.isLoggedIn">
+  <ion-tab [root]="productListPage" tabIcon="md-home"></ion-tab>
+  <!-- <ion-tab [root]="Home" tabIcon="md-search"></ion-tab> -->
+  <ion-tab [root]="CartPage"  tabIcon="md-cart"></ion-tab>
+  <ion-tab [root]="WishlistPage" tabIcon="md-heart"></ion-tab>
+  <!-- <ion-tab [root]="AccountPage" tabIcon="md-person"></ion-tab> -->
+</ion-tabs>
+<ion-tabs *ngIf="!values.isLoggedIn" #homerTabs>
+  <ion-tab [root]="productListPage" tabIcon="md-home"></ion-tab>
+  <!-- <ion-tab [root]="Home" tabIcon="md-search"></ion-tab> -->
+  <ion-tab [root]="AccountLogin" tabIcon="md-person"></ion-tab>
+  <ion-tab [root]="CartPage" tabIcon="md-cart"></ion-tab>
+</ion-tabs>

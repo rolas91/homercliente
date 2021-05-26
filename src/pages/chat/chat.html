@@ -1,0 +1,45 @@
+<ion-header class="settings-header">
+  <ion-navbar color="header">
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+      </button>
+      <!-- <ion-title text-wrap text-center *ngIf="post?.post_title">{{post.post_title}} </ion-title> -->
+      <ion-title >
+          <img  style="max-width: 150px;" src="{{values.avatar}}" />
+      </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div *ngFor="let message of messages" class="message-wrapper">
+    <div>
+      <!-- <img class="profile-pic" [ngClass]="{'left':nickname !== message.from, 'right':nickname === message.from}" src="https://dev.digitalfactory.tech/demos/homer/wp-content/uploads/2020/06/unnamed-7.png"
+      /> -->
+      <!--  wave-->
+      <div class="chat-bubble" [ngClass]="{'left':nickname !== message.from, 'right':nickname === message.from, 'slide-left': nickname !== message.from, 'slide-right':nickname === message.from}">
+
+        <div class="message" [innerHTML]="message.text" autolinker>
+        </div>
+
+        <div class="message-detail">
+          <span class="bold">{{message.from}}</span>,
+          <span>{{message.created | date:'dd/MM hh:MM'}}</span>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="cf"></div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <form [formGroup]="messageForm" (submit)="sendMessage(chatBox)" novalidate>
+    <ion-item>
+      <ion-input formControlName="message" [(ngModel)]="chatBox" placeholder="Send a message..."></ion-input>
+      <button ion-button clear (click)="sendMessage(chatBox)" item-end>
+        <ion-icon class="footer-btn" name="send"></ion-icon>
+      </button>
+    </ion-item>
+  </form>
+</ion-footer>

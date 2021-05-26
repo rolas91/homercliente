@@ -1,0 +1,55 @@
+<!--
+  Generated template for the OrdersPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header class="settings-header">
+  <ion-navbar color="header">
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+      </button>
+      <!-- <ion-title text-wrap text-center *ngIf="post?.post_title">{{post.post_title}} </ion-title> -->
+      <ion-title>
+          <img   src="{{values.avatar}}" />
+      </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <div class="sub-header">
+    <h1>Mis Reservas</h1>
+  </div>
+  <div class="card" *ngFor="let orders of data">
+    <div class="card-body">
+      <div class="row-h2">
+        <h2 style="font-size: 16px;">
+          <b>Booking # {{orders.id}}</b>
+        </h2>
+        <h2>
+         <b>Fecha de solicitud: </b> <br>{{orders.date | date: 'fullDate' }}, {{orders.hour}}
+        </h2>
+      </div>
+      <h2>
+        <b>Estado de la reserva: </b> <br><span style="text-transform: uppercase;">{{orders.status}}</span>
+      </h2>
+      <h2>
+        <b>Servicio solicitado: </b> <br>{{orders.productName}}
+      </h2>
+      <h2>
+        <b>Dirección: </b> <br>{{orders.location}}
+      </h2>
+      <h2 *ngIf="orders.isCancel != null && orders.isCancel != '' ">
+        <b>Motivo de cancelación: </b> <br>{{orders.isCancel}}
+      </h2>
+      <button style="background: #000;" *ngIf="orders.status != 'cancelado' && orders.status == 'finalizado'" (click)="getCart()"  text-center ion-button icon-left clear  icon-only class="has-icon icon-only" small text-uppercase >
+        Pagar
+      </button>
+      <button *ngIf="orders.status != 'cancelado'"  (click)="openchat(orders.id)"  text-center ion-button icon-left clear color="button-color" icon-only class="has-icon icon-only" small text-uppercase >
+        Chat
+      </button>
+      <button *ngIf="orders.status != 'cancelado'" (click)="changestatecancel(orders.id, orders.onesignal)" text-center ion-button icon-left clear color="button-color" icon-only class="has-icon icon-only" small text-uppercase >
+        Cancelar
+      </button>
+    </div>
+  </div>
+</ion-content>

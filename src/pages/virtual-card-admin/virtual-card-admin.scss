@@ -1,0 +1,160 @@
+page-virtual-card-admin {
+  ion-content {
+    //  --background: url(../src/assets/image/medical.jpg) no-repeat top center/cover fixed, #fff;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: #fcfcfc !important;
+    ion-button {
+      margin-top: 1em;
+      margin-bottom: 1em;
+    }
+  }
+  ion-title {
+    width: 150px;
+    position: absolute;
+    left: 0;
+    top: 18%;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  ion-card {
+    background-color: #fcfcfc !important;
+    box-shadow: none !important;
+    width: 80% !important;
+  }
+
+  .customer {
+    background-color: #fcfcfc !important;
+  }
+
+  ion-card-header {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600 !important;
+  }
+
+  ion-card-content {
+    display: flex;
+    background-color: #ffff;
+    border-radius: 20px;
+    padding: 20px !important;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.03);
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  ion-card-content h5 {
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    font-size: 13px !important;
+  }
+
+  ion-card-content p {
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-weight: lighter;
+    font-size: 10px !important;
+    color: #ddd;
+  }
+
+  ion-card ion-card-content img {
+    width: 40px !important;
+    height: 40px !important;
+    margin-right: 15px;
+  }
+
+  ion-toolbar {
+    --background: transparent;
+  }
+
+  ion-chip {
+    --background: #9dc912;
+    --color: #fff;
+  }
+
+  .bar-button-menutoggle-ios {
+    padding: 0 25px 25px 25px;
+  }
+
+  .card {
+    margin: 0 auto;
+
+    .header {
+      height: 200px; // 20vh;
+      background-color: #76a7ab;
+      background-image: url("../../../assets/image/top-dashboard.png") !important;
+      background-repeat: no-repeat;
+      background-size: cover;
+      .avatar {
+        width: 21%;
+        height: 155px;
+        position: relative;
+        margin: 0 auto;
+
+        img {
+          display: block;
+          border-radius: 50%;
+          position: absolute;
+          bottom: calc(-1 * (80px + 4px)); // -42px;
+          border: 8px solid #fcfcfc;
+        }
+      }
+    }
+  }
+
+  .card-body {
+    background-color: #fcfcfc;
+    padding: 30px;
+    // height: calc(100vh - (330px + 140px));
+    overflow: hidden;
+
+    .user-meta {
+      padding-top: 40px;
+      text-align: center;
+      .playername {
+        font-size: 24px;
+        font-weight: 600;
+        color: #303940;
+        font-family: Arial, Helvetica, sans-serif !important;
+      }
+
+      .country {
+        font-size: 90%;
+        color: #949ea6;
+        text-transform: uppercase;
+        margin: 0 auto;
+        font-family: Arial, Helvetica, sans-serif !important;
+      }
+    }
+  }
+
+  .button-margin {
+    width: 80% !important;
+    margin: 0 auto;
+  }
+
+  .button-margin button {
+    width: 100% !important;
+    border-radius: 20px;
+    font-family: Arial, Helvetica, sans-serif !important;
+  }
+
+  .cards {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+  .card div {
+    border:1px solid red;
+    margin-bottom: 10px;
+  }
+  .btn-acciones {
+    color: #fff;
+    padding: 5px;
+    background: #eb0423;
+    border-radius: 20px;
+    vertical-align: middle;
+  }
+}

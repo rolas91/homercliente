@@ -1,0 +1,53 @@
+<!-- Header -->
+<ion-header>
+  <ion-toolbar color="header">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title >
+      <img  (click)="gohome();" src="{{values.avatar}}" />
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="account-login">
+    <img class="header-login" src="{{values.headerLogin}}">
+
+  <div class="margin">
+    <div>
+      <img style="width: 70%;" class="logo-login" src="{{values.avatar}}">
+    </div>
+    <form #f="ngForm" class="login">
+      <ion-list>
+        <ion-item>
+          <ion-label floating>{{"username" | translate}}</ion-label>
+          <ion-input required type="email" [(ngModel)]="loginData.username" name="firstname">
+          </ion-input>
+        </ion-item>
+
+        <!-- <ion-item>
+          <ion-input [type]="getType()" required type="password" [(ngModel)]="loginData.password" name="password" placeholder="Password"></ion-input>
+        <ion-icon name="eye" item-right (click)="toggleTextPassword()"></ion-icon>
+
+        </ion-item> -->
+
+        <ion-item>
+          <ion-label floating>{{"password" | translate}}</ion-label>
+          <ion-input class="pass" required [type]="passwordType" clearOnEdit="false" [(ngModel)]="loginData.password" name="password"></ion-input>
+          <ion-icon item-end [name]="passwordIcon" class="passwordIcon" (click)='hideShowPassword()'></ion-icon>
+        </ion-item>
+
+      </ion-list>
+      <div class="margin">
+        <button ion-button block color="button-color" type="submit" class="button button-block button-default"
+          text-uppercase [disabled]="disableSubmit" (click)="login(loginData)">{{"LogIn" | translate}}
+        </button>
+        <br>
+        <button ion-button clear color="button-color" type="submit" class="forgot-pass button button-block button-clear"
+          text-uppercase (click)="forgotten()">{{"Forgot Password" | translate}} ?
+        </button>
+      </div>
+    </form>
+    <br />
+  </div>
+</ion-content>

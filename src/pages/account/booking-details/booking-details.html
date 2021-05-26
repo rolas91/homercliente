@@ -1,0 +1,98 @@
+<ion-header>
+  <ion-navbar color="header">
+    <button ion-button menuToggle>
+      <ion-icon name="menu">
+      </ion-icon>
+    </button>
+    <ion-title>{{"Booking Info" | translate}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="order-details">
+  <ion-spinner *ngIf="!orderDetails" name="crescent">
+  </ion-spinner>
+  <div *ngIf="orderDetails">
+    <ion-item-group>
+      <ion-item-divider>{{"Booked Product" | translate }}
+      </ion-item-divider>
+      <ion-item no-lines>{{orderDetails.order.booked_product}}
+      </ion-item>
+      
+      <ion-item-divider>{{"Customer Details" | translate}}
+      </ion-item-divider>
+      <ion-item>
+        <ion-row>
+          <ion-col>{{"Name" | translate}}
+          </ion-col>
+          <ion-col text-right>{{orderDetails.order.billing_address.first_name}}
+            {{orderDetails.order.billing_address.last_name}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>{{"Email" | translate}}
+          </ion-col>
+          <ion-col text-right>{{orderDetails.order.billing_address.email}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>{{"Phone" | translate}}
+          </ion-col>
+          <ion-col text-right>{{orderDetails.order.billing_address.phone}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>{{"Address" | translate}} 1
+          </ion-col>
+          <ion-col text-right>{{orderDetails.order.billing_address.address_1}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>{{"Address" | translate}} 2
+          </ion-col>
+          <ion-col text-right>{{orderDetails.order.billing_address.address_2}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>{{"City" | translate}}
+          </ion-col>
+          <ion-col text-right>{{orderDetails.order.billing_address.city}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>{{"State" | translate}}
+          </ion-col>
+          <ion-col text-right>{{orderDetails.order.billing_address.city}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>{{"Postcode" | translate}}
+          </ion-col>
+          <ion-col text-right>{{orderDetails.order.billing_address.postcode}}
+          </ion-col>
+        </ion-row>
+      </ion-item>
+
+      <ion-item-divider>{{"Booking Status" | translate}}
+      </ion-item-divider>
+      <ion-item no-lines>{{orderDetails.order.statusbooking}}
+      </ion-item> 
+
+      <ion-item-divider>{{"Booking Date/Time" | translate}}
+      </ion-item-divider>
+      <ion-item>
+        <ion-row>
+          <ion-col>{{"Start Date" | translate}}
+          </ion-col>
+          <ion-col text-right>{{orderDetails.order.start_date | date:'medium'}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>{{"End Date" | translate}}
+          </ion-col>
+          <ion-col text-right>{{orderDetails.order.end_date | date:'medium'}}
+          </ion-col>
+        </ion-row>
+      </ion-item>
+    </ion-item-group>
+  </div>
+</ion-content>

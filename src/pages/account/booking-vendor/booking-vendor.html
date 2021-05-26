@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-navbar color="header">
+    <button ion-button menuToggle>
+      <ion-icon name="menu">
+      </ion-icon>
+    </button>
+    <ion-title  text-center>{{"Bookings" | translate}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content text-wrap class="account-order">
+  <ion-spinner *ngIf="!orders" name="crescent">
+  </ion-spinner>
+  <div *ngIf="orders">
+
+    <div class="no-orders">
+    <h4 *ngIf="orders.orders.length == 0" text-center no-lines>
+      <button ion-button full clear text-uppercase color="header">{{"Therearenoorders." | translate}}
+      </button>
+    </h4>
+    </div>
+
+    <div *ngIf="orders.orders.length">
+      <ion-item *ngFor="let item of orders.orders">
+        
+        <h2>
+          <b>{{"Details" | translate}} :
+          </b>{{"Booking" | translate }} # {{item.bookingId}}
+        </h2>
+        <h2>
+          <b>{{"Booked Product" | translate}} :
+          </b> <label style="color:#1e88e5e6;"> {{item.booked_product}}</label>
+        </h2>
+        <h2>
+          <b>{{"Booked By" | translate}} :
+          </b> {{item.booked_by}}
+        </h2>
+        <h2>
+          <b>{{"Start Date" | translate}} :
+          </b> {{item.start_date | date:'medium'}}
+        </h2>
+        <h2>
+          <b>{{"End Date" | translate}} :
+          </b> {{item.end_date | date:'medium'}}
+        </h2>
+        <h2>
+          <b>{{"Customer" | translate}} :
+          </b> {{item.billing_address.first_name}} {{item.billing_address.last_name}}, {{item.billing_address.address_1}}, {{item.billing_address.address_2}}, {{item.billing_address.city}}, {{item.billing_address.state}}, {{item.billing_address.country}}, {{item.billing_address.postcode}}
+        </h2>
+        <h2>
+          <b>{{"Status" | translate}} :
+          </b> {{item.statusbooking}}
+        </h2>
+
+        <button *ngIf="item.row_actions.edit" text-center ion-button icon-left clear no-margin color="button-color" icon-only class="has-icon icon-only" small text-uppercase (click)="getBookingDetails(item.order_id)">
+          <ion-icon name="ios-eye">
+          </ion-icon>		  		
+          {{"View" | translate}} 
+        </button>
+
+        <button *ngIf="item.row_actions.confirm" text-center ion-button icon-left clear no-margin color="button-color" icon-only class="has-icon icon-only" small text-uppercase (click)="confirm(item.bookingId)">
+          <ion-icon ios="ios-checkmark-circle" md="md-checkmark-circle">
+          </ion-icon>		  		
+          {{"Confirm" | translate}} 
+        </button>
+
+        <button *ngIf="item.row_actions.unconfirm" text-center ion-button icon-left clear no-margin color="button-color" icon-only class="has-icon icon-only" small text-uppercase (click)="unconfirm(item.bookingId)">
+          <ion-icon ios="ios-checkmark-circle" md="md-checkmark-circle">
+          </ion-icon>		  		
+          {{"Unconfirm" | translate}} 
+        </button>
+
+      </ion-item>
+    </div> 
+    <!-- <ion-infinite-scroll (ionInfinite)="doInfinite($event)" *ngIf="has_more_items">
+      <ion-infinite-scroll-content
+      loadingSpinner="crescent"
+      loadingText="{{'Loading more items..' | translate}}">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll> -->
+  </div>
+</ion-content>

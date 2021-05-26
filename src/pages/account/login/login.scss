@@ -1,0 +1,140 @@
+.account-login {
+    .margin {
+        margin: 10px;
+    }
+    .list {
+        margin: 0 0 16px 0;
+    }
+    .item {
+        padding: 0px;
+    }
+    .button {
+        border-radius: 7px;
+    }
+    .logo-login {
+        margin: auto;
+        display: block;
+    }
+    .header-login{
+        width: 100%;
+    }
+    form {
+        margin: 40px;
+    }
+    .login {
+        .list .item-block .item-inner {
+            border-bottom: none;
+        }
+        .list>.item-block:first-child {
+            border-top: none;
+        }
+        .list>.item-block:last-child {
+            border-bottom: none;
+        }
+        .text-input {
+            border: 2px solid #e0e0e0;
+            height: 2.5em;
+            border-radius: 7px;
+            padding: 0 8px;
+            margin: 11px 8px 11px 8px;
+        }
+        .label {
+            margin: 0 20px -4px 10px;
+            font-size: 20px;
+        }
+        .item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus) .item-inner {
+            border-bottom-color: transparent;
+            box-shadow: none;
+        }
+        .item-md.item-input.input-has-focus .item-inner {
+            box-shadow: none;
+        }
+        .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner {
+            border-bottom-color: transparent;
+            box-shadow: none;
+        }
+        .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):last-child {
+            border-bottom-color: transparent;
+            box-shadow: none;
+        }
+        .list-md .item-input.input-has-focus:last-child {
+            box-shadow: none;
+        }
+        .list-md .item-input.ng-invalid.ng-touched:not(.input-has-focus):last-child {
+            border-bottom-color: transparent;
+            box-shadow: none;
+        }
+    }
+    .item-md ion-icon[item-right]{
+        position: absolute;
+        top: 8px;
+        right: 12px;
+    }
+     .passwordIcon.icon-md{
+        font-size: 2.5rem !important;
+        position: relative !important;
+        top: 9px !important;
+        margin: 0px 0px 0px -8px !important;
+        border: 2px solid #e0e0e0;
+        height: 40px;
+        border-radius: 7px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        padding: 0 8px;
+        border-left: none;
+     }
+     .passwordIcon.icon-ios{
+        font-size: 2.5rem !important;
+        position: relative !important;
+        top: 10px !important;
+        margin: 0px 0px 0px -8px !important;
+        border: 2px solid #e0e0e0;
+        height: 42px;
+        border-radius: 7px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        padding: 0 8px;
+        border-left: none;
+     }
+     .ion-md-eye-off:before {
+        margin-top: 5px;
+    }
+     .pass .text-input{
+         border-right: none !important;
+         border-top-right-radius: 0;
+         border-bottom-right-radius: 0;
+     }
+     .button-default{
+        width: 60%;
+        margin:0 auto;
+     }
+     .button{
+        text-transform: capitalize!important;
+        font-size: 15px;
+     }
+     .forgot-pass{
+         color: #999;
+     }
+}
+
+.alert-md .alert-wrapper {
+    max-width: 90%;
+}
+.alert-md .alert-button-group {
+    padding: 8px 8px 8px 10px;
+}
+
+.alert-md .alert-button {
+    margin: 0;
+}
+
+ion-title {
+  width: 150px;
+  position: absolute;
+  left: 0;
+  top: 18%;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
